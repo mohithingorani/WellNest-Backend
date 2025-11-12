@@ -7,6 +7,7 @@ router.post("/", async (req, res) => {
   const { context, usermessage,aimessage }: { context: string; usermessage: string,aimessage:string } = req.body;
 
   try {
+    console.log("Generating Summary:");
     const contextResponse = await ai.models.generateContent({
       model: "gemini-2.5-flash",
       contents: `
@@ -16,6 +17,7 @@ router.post("/", async (req, res) => {
     `,
     });
     const summary = contextResponse.text;
+    console.log("Summary = ",summary);
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
       contents: `
@@ -31,6 +33,7 @@ router.post("/", async (req, res) => {
     });
 
     const text = response.text;
+    console.log("response=",text);
     res.json({
       text,
       summary
