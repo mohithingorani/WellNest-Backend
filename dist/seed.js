@@ -8,9 +8,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const client_1 = require("@prisma/client");
-const prisma = new client_1.PrismaClient();
+const prisma_1 = __importDefault(require("./prisma"));
 const mockTherapists = [
     {
         email: "yashsthapliyal05@gmail.com",
@@ -23,7 +25,7 @@ const mockTherapists = [
 const seedTherapists = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         for (const therapist of mockTherapists) {
-            yield prisma.therapist.create({
+            yield prisma_1.default.therapist.create({
                 data: {
                     email: therapist.email,
                     password: therapist.password,
@@ -40,7 +42,7 @@ const seedTherapists = () => __awaiter(void 0, void 0, void 0, function* () {
         console.error("Error adding mock therapists:", error);
     }
     finally {
-        yield prisma.$disconnect();
+        yield prisma_1.default.$disconnect();
     }
 });
 seedTherapists();
