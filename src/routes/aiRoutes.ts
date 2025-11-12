@@ -11,7 +11,7 @@ router.post("/", async (req, res) => {
     const contextResponse = await ai.models.generateContent({
       model: "gemini-2.5-flash",
       contents: `
-      I am giving you a brief summary of text and new conversation and you have to add the text into the summary if you find it necessary and create new summary so i can pass that summary in the next conversation. previous summary: ${context}
+      I am giving you a brief summary of text and new conversation and you have to add the text into the summary if you find it necessary and create new summary so i can pass that summary in the next conversation.include important dependency and information like name or symptomps or feelings or whatever you might feel like is important to take in context in later conversation. previous summary: ${context}
       new userMessage: ${usermessage},
       last aimessage:${aimessage}
     `,
