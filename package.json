@@ -4,8 +4,13 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -b",
+<<<<<<< HEAD
     "start": "tsc -b && node dist/server.js",
     "dev": "tsc -b && nodemon dist/server.js"
+=======
+    "start": "node dist/server.js",
+    "dev": "node dist/server.js"
+>>>>>>> 4dcad956362ffe7b93eea5a6573375ffaaebffb1
   },
   "keywords": [],
   "author": "",
@@ -24,8 +29,12 @@
     "resend": "^4.1.2"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
+=======
+    "@types/express": "^5.0.3",
+>>>>>>> 4dcad956362ffe7b93eea5a6573375ffaaebffb1
     "@types/node": "^22.7.9",
     "prisma": "^6.4.0",
     "ts-node": "^10.9.2",
