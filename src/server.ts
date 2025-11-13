@@ -5,7 +5,6 @@
   import adminRoutes from "./routes/adminRoutes";
   import aiRoutes from "./routes/aiRoutes"
   import dotenv from "dotenv";
-  const router = Router();
   dotenv.config(); 
   const app = express();
 
