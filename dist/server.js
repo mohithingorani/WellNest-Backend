@@ -10,7 +10,6 @@ const userRoutes_1 = __importDefault(require("./routes/userRoutes"));
 const adminRoutes_1 = __importDefault(require("./routes/adminRoutes"));
 const aiRoutes_1 = __importDefault(require("./routes/aiRoutes"));
 const dotenv_1 = __importDefault(require("dotenv"));
-const testing_1 = __importDefault(require("./routes/testing"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 // Middleware
@@ -21,7 +20,6 @@ app.use("/therapist", therapistRoutes_1.default);
 app.use("/user", userRoutes_1.default);
 app.use("/admin", adminRoutes_1.default);
 app.use("/ai", aiRoutes_1.default);
-app.use("/testing", testing_1.default);
 const port = process.env.PORT || 3000;
 // Start the server
 app.listen(port, () => {
